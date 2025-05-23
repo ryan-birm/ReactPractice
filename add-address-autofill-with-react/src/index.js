@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { AddressAutofill } from '@mapbox/search-js-react';
+require('dotenv').config()
+const token = process.env.MAPBOX_ACCESS_TOKEN
 
 function App() {
     return (
         <form>
-            <AddressAutofill accessToken="pk.eyJ1IjoiYmlybSIsImEiOiJjbWF6eHIza3owb2ZkMmxvczg5emg2ZDZtIn0.Yg81e2RlYrf3Ze0cbaJVtg">
+            <AddressAutofill accessToken={token}>
                 <input
                     name="address" 
                     placeholder="Address" 
